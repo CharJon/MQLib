@@ -49,7 +49,7 @@ set(SOURCES
         src/heuristics/maxcut/baseline.cpp
         )
 
-add_library(mqlib SHARED ${SOURCES})
+add_library(mqlib STATIC ${SOURCES})
 
 target_include_directories(mqlib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
