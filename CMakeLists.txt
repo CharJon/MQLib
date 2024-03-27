@@ -50,7 +50,7 @@ set(SOURCES
         )
 
 option(MQLIB_SHARED_LIB "Build a shared library, instead of a static one" OFF)
-if (MQLIB_SHARED)
+if (MQLIB_SHARED_LIB)
     add_library(mqlib SHARED ${SOURCES})
 else()
     add_library(mqlib STATIC ${SOURCES})
