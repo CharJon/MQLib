@@ -297,6 +297,10 @@ namespace mqlib {
 
                 // Perform local searches (all 1- and 2-moves better than the tolerance)
                 if (local_search) {
+                    // report before local search, as this might be slow for big graphs
+                    if (!Report(x, iter)) {
+                        return;
+                    }
                     x.All1Swap(one_move_tolerance);
                     x.All2Swap(two_move_tolerance);
                 }
