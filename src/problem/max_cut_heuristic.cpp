@@ -53,7 +53,7 @@ namespace mqlib {
             return mc_->Report(past_solutions_[past_solutions_.size() - 1], newBest, rt,
                                iter);
         } else {
-            return rt < runtime_limit_;
+            return (rt < runtime_limit_) && (best_ < solution_value_limit_);
         }
     }
 
@@ -64,8 +64,8 @@ namespace mqlib {
             past_solution_values_.push_back(best_);
             if (validation_) {
                 past_solutions_.emplace_back(mi_, this,
-                                                               solution.get_assignments(),
-                                                               solution.get_weight());
+                                             solution.get_assignments(),
+                                             solution.get_weight());
             } else {
                 past_solutions_[0] = MaxCutSimpleSolution(mi_, this,
                                                           solution.get_assignments(),

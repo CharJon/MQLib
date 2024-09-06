@@ -1,5 +1,6 @@
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include "mqlib/problem/heuristic.h"
 
 namespace mqlib {
@@ -7,7 +8,8 @@ namespace mqlib {
     Heuristic::Heuristic(double runtime_limit, bool validation) :
             validation_(validation),
             best_(0.0),
-            runtime_limit_(runtime_limit) {
+            runtime_limit_(runtime_limit),
+            solution_value_limit_(std::numeric_limits<double>::max()) {
         gettimeofday(&start_time_, nullptr);
     }
 
@@ -37,6 +39,10 @@ namespace mqlib {
 
     const std::vector<double> &Heuristic::get_past_solution_times() const {
         return past_solution_times_;
+    }
+
+    void Heuristic::set_solution_value_limit(double limit) {
+        solution_value_limit_ = limit;
     }
 
 }

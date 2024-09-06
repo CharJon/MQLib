@@ -17,6 +17,8 @@ namespace mqlib {
         // Compute the runtime from start until now
         double Runtime() const;
 
+        void set_solution_value_limit(double limit);
+
         // Getters
         double get_best() const { return best_; }
 
@@ -31,6 +33,7 @@ namespace mqlib {
          *   to determine whether to keep going:
          *   1) If the user provided a callback, use that callback
          *   2) Runtime-based termination criterion
+         *   3) Solution value based termination criterion
          */
 
         // Summary of reported solutions
@@ -49,6 +52,7 @@ namespace mqlib {
         struct timeval start_time_;
         double best_;
         double runtime_limit_;
+        double solution_value_limit_;
 
         // Information about the history of new best solutions found by the heuristic.
         std::vector<double> past_solution_values_;
