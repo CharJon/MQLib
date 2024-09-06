@@ -254,8 +254,8 @@ namespace mqlib {
     }
 
     Burer2002::Burer2002(const MaxCutInstance &mi, double runtime_limit,
-                         bool validation, MaxCutCallback *mc) :
-            MaxCutHeuristic(mi, runtime_limit, validation, mc) {
+                         bool validation, MaxCutCallback *mc, double solution_value_limit) :
+            MaxCutHeuristic(mi, runtime_limit, validation, mc, solution_value_limit) {
         // Parameters
         // Number of permitted non-improving perturbations to optimal theta before
         // search is stopped. This was set to a few different values in the

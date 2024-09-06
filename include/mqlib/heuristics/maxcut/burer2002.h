@@ -4,6 +4,7 @@
 #include <vector>
 #include "mqlib/heuristics/maxcut/max_cut_solution.h"
 #include "mqlib/problem/max_cut_heuristic.h"
+#include <limits>
 
 namespace mqlib {
 
@@ -42,7 +43,7 @@ namespace mqlib {
         // Solves Max-Cut on edge-weighted graph mi, reporting each new best
         // solution to the reporter.
         Burer2002(const MaxCutInstance &mi, double runtime_limit, bool validation,
-                  MaxCutCallback *mc);
+                  MaxCutCallback *mc, double solution_value_limit = std::numeric_limits<double>::max());
     };
 
 }
