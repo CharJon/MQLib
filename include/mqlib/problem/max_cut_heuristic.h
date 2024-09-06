@@ -23,7 +23,8 @@ namespace mqlib {
     class MaxCutHeuristic : public Heuristic {
     public:
         MaxCutHeuristic(const MaxCutInstance &mi, double runtime_limit,
-                        bool validation, MaxCutCallback *mc);
+                        bool validation, MaxCutCallback *mc,
+                        double solution_value_limit = std::numeric_limits<double>::max());
 
         // Heuristic checks whether or not it should continue without reporting a
         // new solution or an iteration count.

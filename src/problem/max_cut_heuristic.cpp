@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <limits>
 #include "mqlib/problem/max_cut_heuristic.h"
 #include "mqlib/problem/max_cut_instance.h"
 
@@ -7,8 +8,9 @@ namespace mqlib {
 
     MaxCutHeuristic::MaxCutHeuristic(const MaxCutInstance &mi,
                                      double runtime_limit, bool validation,
-                                     MaxCutCallback *mc) :
-            Heuristic(runtime_limit, validation),
+                                     MaxCutCallback *mc,
+                                     double solution_value_limit) :
+            Heuristic(runtime_limit, validation, solution_value_limit),
             mi_(mi),
             mc_(mc) {
         // Store a new best solution with objective 0
@@ -42,7 +44,7 @@ namespace mqlib {
         if (mc_) {
             return mc_->Report(past_solutions_[past_solutions_.size() - 1], newBest, rt);
         } else {
-            return rt < runtime_limit_;
+            return (rt < runtime_limit_) && (best_ < solution_value_limit_);
         }
     }
 

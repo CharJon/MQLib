@@ -5,11 +5,12 @@
 
 namespace mqlib {
 
-    Heuristic::Heuristic(double runtime_limit, bool validation) :
+    Heuristic::Heuristic(double runtime_limit, bool validation,
+                         double solution_value_limit) :
             validation_(validation),
             best_(0.0),
             runtime_limit_(runtime_limit),
-            solution_value_limit_(std::numeric_limits<double>::max()) {
+            solution_value_limit_(solution_value_limit) {
         gettimeofday(&start_time_, nullptr);
     }
 

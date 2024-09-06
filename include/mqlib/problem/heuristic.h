@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <limits>
 
 namespace mqlib {
 
@@ -12,7 +13,8 @@ namespace mqlib {
     public:
         Heuristic() = delete;
 
-        Heuristic(double runtime_limit, bool validation);
+        Heuristic(double runtime_limit, bool validation,
+                  double solution_value_limit = std::numeric_limits<double>::max());
 
         // Compute the runtime from start until now
         double Runtime() const;
