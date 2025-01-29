@@ -77,7 +77,7 @@ namespace mqlib {
                     bool matches = false;
                     int worst_pos = -1;
                     double worst_weight = std::numeric_limits<double>::max();
-                    for (uint64_t ct = 0; ct < B->size(); ++ct) {
+                    for (std::uint64_t ct = 0; ct < B->size(); ++ct) {
                         if ((*B)[ct] == *this) {
                             matches = true;
                             break;
@@ -94,7 +94,7 @@ namespace mqlib {
                         if (ImprovesOver(worst_weight)) {
                             include = true;  // Always include if improving on some elt of B
                         } else if (BaseSolution::ImprovesOver(worst_weight, weight_) &&
-                                   B->size() >= static_cast<uint64_t>(mStar)) {
+                                   B->size() >= static_cast<std::uint64_t>(mStar)) {
                             include = false;  // Exclude if B is full and solution worse than all
                         } else {
                             // Check diversity condition
@@ -112,7 +112,7 @@ namespace mqlib {
 
                     // Actually add the current solution to the B set
                     if (include) {
-                        if (B->size() < static_cast<uint64_t>(mStar)) {
+                        if (B->size() < static_cast<std::uint64_t>(mStar)) {
                             B->push_back(QUBOSolution(*this));
                         } else {
                             (*B)[worst_pos] = QUBOSolution(*this);
@@ -288,7 +288,7 @@ namespace mqlib {
         }
 
         // Step 2: Loop for |I_star|
-        for (uint64_t iter_count = 0; iter_count < I_star.size(); ++iter_count) {
+        for (std::uint64_t iter_count = 0; iter_count < I_star.size(); ++iter_count) {
             // Step 2.1: Initialize V1 and V2 (and a few other vars)
             double V1 = -std::numeric_limits<double>::max();
             double V2 = -std::numeric_limits<double>::max();
@@ -504,7 +504,7 @@ namespace mqlib {
 
         // Select the variables for this solution
         for (int i = 0; i < N_; ++i) {
-            if (static_cast<uint64_t>(counts[i]) != B.size() && counts[i] != 0) {
+            if (static_cast<std::uint64_t>(counts[i]) != B.size() && counts[i] != 0) {
                 // Some elite solutions different on this index
                 double zeta;
                 if (Random::RandDouble() <= pPrime) {
