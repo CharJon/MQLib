@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
+#include <cstdint>
 #include "mqlib/problem/heuristic.h"
 
 namespace mqlib {
