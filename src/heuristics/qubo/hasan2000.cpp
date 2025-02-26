@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdint>
 #include <limits>
 #include "mqlib/heuristics/qubo/hasan2000.h"
 #include "mqlib/util/random.h"
