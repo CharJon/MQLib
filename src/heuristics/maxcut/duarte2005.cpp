@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <vector>
 #include "mqlib/heuristics/maxcut/duarte2005.h"
 #include "mqlib/util/random.h"
