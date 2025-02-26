@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <limits>
 #include <vector>
 #include <cmath>
