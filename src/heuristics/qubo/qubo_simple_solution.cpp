@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdint>
 #include <iostream>
 #include <vector>
 #include "mqlib/heuristics/qubo/qubo_simple_solution.h"

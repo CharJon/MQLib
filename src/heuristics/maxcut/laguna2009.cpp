@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdint>
 #include <iostream>
 #include <vector>
 #include "mqlib/heuristics/maxcut/laguna2009.h"
