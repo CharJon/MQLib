@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <iostream>
 #include "mqlib/problem/instance.h"
 #include "mqlib/problem/max_cut_instance.h"
