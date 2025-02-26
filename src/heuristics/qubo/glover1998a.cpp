@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 #include <limits>
 #include "mqlib/heuristics/qubo/glover1998a.h"

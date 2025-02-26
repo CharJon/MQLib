@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
 #include "mqlib/heuristics/qubo/alkhamis1998.h"
 #include "mqlib/util/random.h"
 
