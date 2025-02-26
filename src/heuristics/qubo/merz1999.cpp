@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdint>
 #include <random>
 #include "mqlib/heuristics/qubo/merz1999.h"
 #include "mqlib/util/random.h"
