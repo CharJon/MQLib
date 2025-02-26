@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdint>
 #include <iostream>
 #include <cassert>
 #include "mqlib/heuristics/qubo/lodi1999.h"
